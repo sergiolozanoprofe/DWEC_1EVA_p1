@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experiencias y talleres para descubrir el mundo de las plantas.">
+  <title>La Hoja | Talleres de plantas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="aplicacion.js" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <a class="marca" href="#inicio"><span aria-hidden="true">✳</span> la hoja<span class="marca-punto">.</span></a>
+      <button id="boton-menu" class="boton-menu" type="button" aria-expanded="false" aria-controls="navegacion">
+        Menú <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="navegacion" class="navegacion" aria-label="Navegación principal">
+        <a href="#talleres">Talleres</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#presupuesto">Presupuesto</a>
+        <a class="enlace-contacto" href="mailto:hola@lahoja.example">Contactar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="portada">
+      <div class="contenedor portada-contenido">
+        <div>
+          <p class="etiqueta">Un pequeño descanso de la ciudad</p>
+          <h1>Haz sitio para lo que <em>crece.</em></h1>
+          <p>Aprende, desconecta y llévate un poco de verde a casa. Organizamos talleres de plantas para todos los niveles.</p>
+          <a class="boton" href="#talleres">Descubre los talleres <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="ilustracion" aria-hidden="true">
+          <span class="sol"></span>
+          <span class="planta">🌿</span>
+          <span class="sello">Cultiva<br>tu calma</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="talleres" class="contenedor seccion">
+      <div class="encabezado">
+        <div>
+          <p class="etiqueta">Manos a la tierra</p>
+          <h2>Encuentra tu taller</h2>
+        </div>
+        <p>Grupos pequeños, materiales incluidos y muchas ganas de aprender.</p>
+      </div>
+      <div class="filtros" role="group" aria-label="Filtrar talleres">
+        <button class="filtro activo" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="filtro" type="button" data-filtro="iniciacion" aria-pressed="false">Iniciación</button>
+        <button class="filtro" type="button" data-filtro="creativo" aria-pressed="false">Creativos</button>
+      </div>
+      <div class="tarjetas">
+        <article class="tarjeta" data-categoria="iniciacion">
+          <div class="tarjeta-imagen imagen-uno" aria-hidden="true">🌱</div>
+          <div class="tarjeta-contenido">
+            <p class="categoria">Iniciación · 90 min</p>
+            <h3>Tu primera planta</h3>
+            <p>Aprende a elegir, regar y cuidar tus nuevas compañeras verdes.</p>
+            <p class="precio">25 € <span>por persona</span></p>
+          </div>
+        </article>
+        <article class="tarjeta" data-categoria="creativo">
+          <div class="tarjeta-imagen imagen-dos" aria-hidden="true">🪴</div>
+          <div class="tarjeta-contenido">
+            <p class="categoria">Creativo · 2 horas</p>
+            <h3>Un terrario propio</h3>
+            <p>Crea un pequeño paisaje y descubre cómo mantenerlo vivo.</p>
+            <p class="precio">35 € <span>por persona</span></p>
+          </div>
+        </article>
+        <article class="tarjeta" data-categoria="creativo">
+          <div class="tarjeta-imagen imagen-tres" aria-hidden="true">🌼</div>
+          <div class="tarjeta-contenido">
+            <p class="categoria">Creativo · 2 horas</p>
+            <h3>Flores de temporada</h3>
+            <p>Combina colores y texturas para preparar tu propio ramo.</p>
+            <p class="precio">30 € <span>por persona</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="nosotros" class="franja">
+      <div class="contenedor franja-contenido">
+        <div>
+          <p class="etiqueta">Hola, somos La Hoja</p>
+          <h2>Las cosas buenas necesitan tiempo.</h2>
+        </div>
+        <p>Somos un pequeño estudio apasionado por las plantas. Creamos espacios para aprender sin prisas y compartir lo que nos gusta. No necesitas experiencia, solo curiosidad.</p>
+      </div>
+    </section>
+
+    <section id="presupuesto" class="contenedor seccion">
+      <div class="encabezado">
+        <div>
+          <p class="etiqueta">Ven con quien quieras</p>
+          <h2>Calcula tu presupuesto</h2>
+        </div>
+        <p>Prepara una estimación para tu grupo. No se realiza ninguna reserva.</p>
+      </div>
+      <form id="formulario" class="formulario">
+        <div class="campo">
+          <label for="taller">Taller</label>
+          <select id="taller" name="taller">
+            <option value="25">Tu primera planta · 25 €</option>
+            <option value="35">Un terrario propio · 35 €</option>
+            <option value="30">Flores de temporada · 30 €</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="personas">Número de personas</label>
+          <input id="personas" name="personas" type="number" min="1" max="12" maxlength="2" value="1" required>
+        </div>
+        <div class="campo">
+          <label for="pack">Presentación de regalo</label>
+          <select id="pack" name="pack">
+            <option value="0">No, gracias</option>
+            <option value="15">Sí, añadir 15 € al grupo</option>
+          </select>
+        </div>
+        <button class="boton" type="submit">Calcular presupuesto</button>
+        <p id="resultado" class="resultado" role="status" aria-live="polite"></p>
+      </form>
+      <p id="nota" class="nota">Importe orientativo con materiales incluidos.</p>
+      <p id="nota" class="nota">Para consultar fechas, escríbenos por correo.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor pie">
+      <span class="marca">✳ la hoja<span class="marca-punto">.</span></span>
+      <p>Un poco más cerca de la naturaleza.</p>
+      <a href="mailto:hola@lahoja.example">hola@lahoja.ejemplo</a>
+    </div>
+  </footer>
+</body>
+</html>

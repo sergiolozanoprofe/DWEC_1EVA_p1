@@ -1,0 +1,95 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #233a30;
+  background: #f9f8f2;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+.contenedor { width: min(100% - 2rem, 1100px); margin-inline: auto; }
+.cabecera { background: #f9f8f2; border-bottom: 1px solid #e1e5d8; }
+.barra { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; }
+.marca { color: #244b37; font-size: 1.65rem; font-weight: 800; letter-spacing: -0.07em; text-decoration: none; white-space: nowrap; }
+.marca-punto { color: #cb7047; }
+.navegacion { display: flex; align-items: center; gap: 1.6rem; }
+.navegacion a { color: #233a30; font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+.navegacion a:hover { text-decoration: underline; }
+.navegacion .enlace-contacto { border: 1px solid #244b37; border-radius: 2rem; padding: 0.6rem 1rem; }
+.boton-menu { display: none; padding: 0.5rem 0.8rem; border: 1px solid #244b37; border-radius: 0.4rem; background: transparent; color: #244b37; font: inherit; cursor: pointer; }
+.portada { background: #e6ecdc; overflow: hidden; }
+.portada-contenido { display: grid; grid-template-columns: 1fr 0.85fr; align-items: center; gap: 2rem; min-height: 440px; padding-block: 3rem; }
+.etiqueta { color: #637d58; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: Georgia, serif; font-weight: 400; line-height: 1.08; letter-spacing: -0.03em; }
+h1 { margin-bottom: 1.25rem; font-size: clamp(2.8rem, 6vw, 5rem); }
+h1 em { color: #718b61; font-weight: 400; }
+.portada p:not(.etiqueta) { max-width: 46ch; margin-bottom: 1.75rem; }
+.boton { display: inline-block; padding: 0.85rem 1.25rem; border: 0; border-radius: 2rem; background: #244b37; color: white; font: inherit; font-size: 0.9rem; font-weight: 700; text-decoration: none; cursor: pointer; }
+.boton:hover { background: #376348; }
+.ilustracion { position: relative; display: grid; place-items: center; min-height: 320px; border-radius: 50% 50% 4rem 4rem; background: #b6cba9; }
+.sol { position: absolute; top: 2rem; right: 3rem; width: 5rem; height: 5rem; border-radius: 50%; background: #f4d5a5; }
+.planta { position: relative; font-size: 9rem; line-height: 1; }
+.sello { position: absolute; bottom: 1rem; right: -0.5rem; display: grid; place-items: center; width: 6rem; height: 6rem; border-radius: 50%; background: #f9f8f2; color: #52714c; font-family: Georgia, serif; text-align: center; transform: rotate(12deg); }
+.seccion { padding-block: 4.5rem; }
+.encabezado { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 1.8rem; }
+.encabezado h2, .franja h2 { margin-bottom: 0; font-size: clamp(2rem, 4vw, 3rem); }
+.encabezado > p { max-width: 35ch; margin-bottom: 0; color: #5a6e5f; }
+.filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.filtro { padding: 0.5rem 0.9rem; border: 1px solid #aebdae; border-radius: 2rem; background: transparent; color: #244b37; font: inherit; cursor: pointer; }
+.filtro.activo { border-color: #244b37; background: #244b37; color: white; }
+.tarjetas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.tarjeta { overflow: hidden; border: 1px solid #e1e5d8; border-radius: 0.8rem; background: white; }
+.tarjeta[hidden] { display: none; }
+.tarjeta-imagen { display: grid; place-items: center; height: 180px; font-size: 5rem; }
+.imagen-uno { background: #dce9d3; }
+.imagen-dos { background: #eee2cf; }
+.imagen-tres { background: #f0dfd5; }
+.tarjeta-contenido { padding: 1.3rem; padding: 12; }
+.categoria { color: #718b61; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; }
+.tarjeta h3 { margin-bottom: 0.5rem; font-family: Georgia, serif; font-size: 1.5rem; font-weight: 400; }
+.tarjeta-contenido > p:not(.categoria):not(.precio) { color: #5a6e5f; }
+.precio { margin: 1.5rem 0 0; font-weight: 800; }
+.precio span { color: #718176; font-size: 0.8rem; font-weight: 400; }
+.franja { padding-block: 4rem; background: #244b37; color: white; }
+.franja .etiqueta { color: #c3d5ad; }
+.franja-contenido { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+.franja-contenido > p { margin: 0; color: #e4ecdd; }
+.formulario { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 1rem; padding: 1.5rem; border: 1px solid #e1e5d8; border-radius: 0.8rem; background: white; }
+.campo { min-width: 0; }
+label { display: block; margin-bottom: 0.4rem; font-weight: 700; font-size: 0.9rem; }
+input, select { width: 100%; padding: 0.75rem; border: 1px solid #9bae9c; border-radius: 0.4rem; background: white; color: #233a30; font: inherit; }
+.formulario .boton { justify-self: start; }
+.resultado { grid-column: 1 / -1; margin: 0; font-weight: 700; }
+.nota { color: #5a6e5f; color: verde; font-size: 0.85rem; margin-block: 0.75rem; }
+footer { padding-block: 2.5rem; background: #e6ecdc; }
+.pie { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
+.pie p { margin: 0; }
+.pie a { color: #244b37; }
+
+@media (min-width: 840px) and (max-width: 1024px) {
+  .tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+  .barra { flex-wrap: wrap; }
+  .boton-menu { display: block; }
+  .navegacion { display: none; flex: 0 0 100%; flex-direction: column; align-items: stretch; gap: 0; }
+  .navegacion.abierta { display: flex; }
+  .navegacion a { padding: 0.7rem 0; }
+  .navegacion .enlace-contacto { margin-top: 0.4rem; padding: 0.6rem 1rem; text-align: center; }
+  .portada-contenido { grid-template-columns: 1fr; }
+  .ilustracion { min-height: 240px; }
+  .encabezado { display: block; }
+  .encabezado > p { margin-top: 1rem; }
+  .tarjetas, .franja-contenido, .formulario { grid-template-columns: 1fr; }
+  .franja-contenido { gap: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .formulario { min-width: 360px; }
+}
+
+@media (pointer: fine) and (min-width: 600px) and (max-width: 767px) {
+  .portada-contenido { min-width: 900px; }
+}
